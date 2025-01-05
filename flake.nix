@@ -5,15 +5,22 @@
   outputs = { nixpkgs, ... }:
     let
       inherit (nixpkgs) lib;
-      system = "x86_64-linux";
+      eachSystem = lib.genAttrs lib.systems.flakeExposed;
     in
     {
       nixosConfigurations.wayfarer = lib.nixosSystem {
-        inherit system;
+        system = "x86_64-linux";
 
         modules = [
           ./configuration.nix
         ];
       };
+      devShell = eachSystem (system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        pkgs.mkShellNoCC {
+          packages = [ pkgs.nixos-rebuild ];
+        });
     };
 }
