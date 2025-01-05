@@ -3,6 +3,8 @@
   imports = [
     ./hardware.nix
     ./network.nix
+    ./wireguard.nix
+    ./secrets.nix
   ];
 
   security.sudo.wheelNeedsPassword = false;

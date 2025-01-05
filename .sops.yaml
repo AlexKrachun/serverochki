@@ -1,0 +1,11 @@
+keys:
+  - &server_wayfarer age1xh7424gkm648dkdpuh9nz4pcyenkf54v7l75tajkvekyvxdetdaskndvw6
+  - &admin_alex age1gkagt89wv3z4k3rxp5s0wqwaaml9mlvwfrzfzvh8fnjnwymarpzq5ccs67
+  - &admin_liferooter age1w8gl68d3eanxk7s9fzahs7vlyxaj244uk8jcruw74l89c2dy7v5svj4tlp
+creation_rules:
+  - path_regex: secrets/wayfarer.yml
+    key_groups:
+      - age:
+          - *server_wayfarer
+          - *admin_alex
+          - *admin_liferooter
