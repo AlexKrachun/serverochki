@@ -30,21 +30,35 @@
         in
         pkgs.mkShellNoCC {
           packages = (with pkgs; [
-            nixd sops age
-            ssh-to-age wireguard-tools
-          ]) ++ [(
-            pkgs.writeShellApplication {
-              name = "rebuild-nixos";
+            nixd
+            sops
+            age
+            ssh-to-age
+            wireguard-tools
+          ]) ++ [
+            (
+              pkgs.writeShellApplication {
+                name = "rebuild-nixos";
 
-              runtimeInputs = [
-                pkgs.nixos-rebuild
-              ];
+                runtimeInputs = with pkgs; [
+                  nixos-rebuild
+                  nix-output-monitor
+                ];
 
-              text = ''
-                nixos-rebuild switch --fast --flake . --target-host 95.164.2.198 --build-host 95.164.2.198 --use-remote-sudo --use-substitutes
-              '';
-            }
-          )];
+                text = ''
+                  nixos-rebuild switch \
+                    --fast \
+                    --flake . \
+                    --target-host 95.164.2.198 \
+                    --build-host 95.164.2.198 \
+                    --use-remote-sudo \
+                    --use-substitutes \
+                    --log-format internal-json \
+                    |& nom --json
+                '';
+              }
+            )
+          ];
         });
     };
 
