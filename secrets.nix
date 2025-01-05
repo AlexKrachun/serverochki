@@ -5,6 +5,6 @@
   ];
   sops = {
     defaultSopsFile = "${self}/secrets/wayfarer.yml";
-    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25518_key" ];
+    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
   };
 }
