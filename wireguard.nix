@@ -4,6 +4,7 @@ let
   wgPort = 443;
 in
 {
+  networking.nat.enable = true;
   networking.firewall.allowedUDPPorts = [ wgPort ];
   sops.secrets.wireguard_key = {
     owner = "root";
