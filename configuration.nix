@@ -9,6 +9,8 @@
 
   security.sudo.wheelNeedsPassword = false;
 
+  services.qemuGuest.enable = true;
+
   boot.loader.grub = {
     enable = true;
     device = "/dev/vda";
