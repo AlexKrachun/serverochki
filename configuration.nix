@@ -5,6 +5,8 @@
     ./network.nix
     ./wireguard.nix
     ./secrets.nix
+    ./nix-settings.nix
+    ./constants.nix
   ];
 
   security.sudo.wheelNeedsPassword = false;
