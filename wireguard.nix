@@ -28,10 +28,12 @@ in
   sops.secrets.wireguard_key = {
     owner = "root";
     mode = "0400";
+    restartUnits = [ "wg-quick-wg0.service" ];
   };
   sops.secrets.wireguard_peer_keys = {
     owner = "root";
     mode = "0400";
+    restartUnits = [ "wg-quick-wg0.service" ];
   };
   networking.wg-quick.interfaces = {
     wg0 = {
