@@ -31,7 +31,7 @@ in
   networking.nat.enable = true;
   networking.firewall.allowedUDPPorts = [ wgPort ];
   sops.secrets.wireguardKey = {
-    sopsFile = "${self}/wireguard-server.yml";
+    sopsFile = ./wireguard-server.yml;
 
     owner = "root";
     mode = "0400";

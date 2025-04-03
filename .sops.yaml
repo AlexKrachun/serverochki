@@ -11,7 +11,7 @@ creation_rules:
           - *admin_liferooter
           - *server_sequoia
           - *server_pine
-  - path_regex: wireguard-server.yml
+  - path_regex: hosts/sequoia/wireguard-server.yml
     key_groups:
       - age:
           - *admin_alex
