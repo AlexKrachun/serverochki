@@ -2,19 +2,19 @@
 {
   options = {
     constants = {
-      address = lib.mkOption {
-        description = "Server IP address";
+      serverAddress = lib.mkOption {
+        description = "VPN server address";
         type = lib.types.str;
-        default = "95.164.2.198";
-        readOnly = true;
-      };
-      dns = lib.mkOption {
-        description = "DNS server address";
-        type = lib.types.str;
-        default = "1.1.1.1";
+        default = "147.45.240.98";
         readOnly = true;
       };
       wireguard = {
+        tunnelPort = lib.mkOption {
+          description = "Port used for tunnel";
+          type = lib.types.port;
+          default = 25565;
+          readOnly = true;
+        };
         port = lib.mkOption {
           description = "Port used for Wireguard";
           type = lib.types.port;

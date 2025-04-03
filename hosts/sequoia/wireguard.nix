@@ -1,36 +1,47 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  self,
+  ...
+}:
 let
   inherit (lib) getExe getExe';
   iptables = "${pkgs.iptables}/bin/iptables";
   wg = getExe' pkgs.wireguard-tools "wg";
   wgPort = config.constants.wireguard.port;
   inherit (config.constants.wireguard) subnetPrefix;
-  addPeersScript =
-    pkgs.writeScriptBin "add-peers.nu" ''
-      #! ${getExe pkgs.nushell}
+  addPeersScript = pkgs.writeScriptBin "add-peers.nu" ''
+    #! ${getExe pkgs.nushell}
 
-      def main [] {
-        open ${config.sops.secrets.wireguard_peer_keys.path}
-        | from yaml
-        | values
-        | enumerate
-        | each {|el|
-          let key = $el.item | ${wg} pubkey
-          let i = $el.index + 2
-          ${wg} set wg0 peer $key allowed-ips $"${subnetPrefix}.($i)/32"
-        };
+    def main [] {
+      open ${config.sops.secrets.wireguardPeerKeys.path}
+      | from yaml
+      | values
+      | enumerate
+      | each {|el|
+        let key = $el.item | ${wg} pubkey
+        let i = $el.index + 2
+        ${wg} set wg0 peer $key allowed-ips $"${subnetPrefix}.($i)/32"
       }
-    '';
+    }
+  '';
 in
 {
   networking.nat.enable = true;
   networking.firewall.allowedUDPPorts = [ wgPort ];
-  sops.secrets.wireguard_key = {
+  sops.secrets.wireguardKey = {
+    sopsFile = "${self}/wireguard-server.yml";
+
     owner = "root";
     mode = "0400";
     restartUnits = [ "wg-quick-wg0.service" ];
   };
-  sops.secrets.wireguard_peer_keys = {
+  sops.secrets.wireguardPeerKeys = {
+    sopsFile = "${self}/wireguard-clients.yml";
+    key = "";
+    format = "yaml";
+
     owner = "root";
     mode = "0400";
     restartUnits = [ "wg-quick-wg0.service" ];
@@ -44,7 +55,7 @@ in
       listenPort = wgPort;
 
       # Public key: fnjS5SvMGwGQ0o3N+JpNndtZotzGmbrpR44fxsc1FEE=
-      privateKeyFile = config.sops.secrets.wireguard_key.path;
+      privateKeyFile = config.sops.secrets.wireguardKey.path;
 
       postUp = ''
         ${iptables} -A FORWARD -i %i -j ACCEPT
