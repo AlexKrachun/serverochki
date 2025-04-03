@@ -44,14 +44,19 @@
       devShell = eachSystem (
         { pkgs, system }:
         pkgs.mkShellNoCC {
-          packages = [
-            pkgs.nixd
-            pkgs.sops
-            pkgs.age
-            pkgs.ssh-to-age
-            pkgs.wireguard-tools
-            self.packages.${system}.client-config
-          ];
+          packages = lib.attrValues {
+            inherit (self.packages.${system})
+              client-config
+              rebuild-server
+              ;
+            inherit (pkgs)
+              nixd
+              sops
+              age
+              ssh-to-age
+              wireguard-tools
+              ;
+          };
         }
       );
       formatter = eachSystem (system: inputs.nixpkgs-unstable.legacyPackages.${system}.nixfmt-tree);
