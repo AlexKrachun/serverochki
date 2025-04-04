@@ -7,10 +7,11 @@
 }:
 let
   inherit (lib) getExe getExe';
+  inherit (config.constants) wgPort subnetPrefix;
+
   iptables = "${pkgs.iptables}/bin/iptables";
   wg = getExe' pkgs.wireguard-tools "wg";
-  wgPort = config.constants.wireguard.port;
-  inherit (config.constants.wireguard) subnetPrefix;
+
   addPeersScript = pkgs.writeScriptBin "add-peers.nu" ''
     #! ${getExe pkgs.nushell}
 
@@ -29,7 +30,7 @@ let
 in
 {
   networking.nat.enable = true;
-  networking.firewall.allowedUDPPorts = [ wgPort ];
+
   sops.secrets.wireguardKey = {
     sopsFile = ./wireguard-server.yml;
 
@@ -37,6 +38,7 @@ in
     mode = "0400";
     restartUnits = [ "wg-quick-wg0.service" ];
   };
+
   sops.secrets.wireguardPeerKeys = {
     sopsFile = "${self}/wireguard-clients.yml";
     key = "";
@@ -46,6 +48,7 @@ in
     mode = "0400";
     restartUnits = [ "wg-quick-wg0.service" ];
   };
+
   networking.wg-quick.interfaces = {
     wg0 = {
       address = [

@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  inherit (config.constants.wireguard) tunnelPort;
+  inherit (config.constants) tunnelPort wgPort;
 in
 {
   sops.secrets.shadowsocksPassword = {
@@ -14,11 +14,25 @@ in
     config = {
       server = config.constants.serverAddress;
       server_port = tunnelPort;
-      fast_open = true;
+
       method = "chacha20-ietf-poly1305";
 
-      local_address = "::";
-      local_port = tunnelPort;
+      locals = [
+        {
+          protocol = "tunnel";
+
+          forward_address = "127.0.0.1";
+          forward_port = wgPort;
+
+          local_address = "0.0.0.0";
+          local_port = tunnelPort;
+
+          fast_open = true;
+
+          mode = "udp_only";
+        }
+      ];
     };
   };
+  networking.firewall.allowedUDPPorts = [ tunnelPort ];
 }

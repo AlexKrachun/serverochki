@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  inherit (config.constants) tunnelPort;
+in
 {
   sops.secrets.shadowsocksPassword = {
     owner = "root";
@@ -10,11 +13,16 @@
     passwordFile = config.sops.secrets.shadowsocksPassword.path;
     config = {
       server = "::";
-      server_port = config.constants.wireguard.tunnelPort;
-      mode = "udp_only";
+      server_port = tunnelPort;
+
       fast_open = true;
+
+      mode = "tcp_and_udp";
       method = "chacha20-ietf-poly1305";
     };
   };
-  networking.firewall.allowedUDPPorts = [ config.constants.wireguard.tunnelPort ];
+  networking.firewall = {
+    allowedUDPPorts = [ tunnelPort ];
+    allowedTCPPorts = [ tunnelPort ];
+  };
 }

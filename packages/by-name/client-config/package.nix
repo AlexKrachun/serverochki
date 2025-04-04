@@ -17,7 +17,7 @@ writeScriptBin "client-config" ''
   def main [ name: string ] {
     let repo_root = ${lib.getExe git} rev-parse --show-toplevel
 
-    let server_pubkey = ${lib.getExe sops} decrypt $"($repo_root)/wireguard-server.yml"
+    let server_pubkey = ${lib.getExe sops} decrypt $"($repo_root)/hosts/sequoia/wireguard-server.yml"
       | from yaml
       | get wireguardKey
       | ${lib.getExe' wireguard-tools "wg"} pubkey
@@ -39,13 +39,14 @@ writeScriptBin "client-config" ''
     $"
   [Interface]
   PrivateKey = ($peer.key)
-  Address = ${constants.wireguard.subnetPrefix}.($peer.index + 2)/32
+  Address = ${constants.subnetPrefix}.($peer.index + 2)/32
   DNS = 1.1.1.1
+  MTU = 1353
 
   [Peer]
   PublicKey = ($server_pubkey)
   AllowedIPs = 0.0.0.0/0
-  Endpoint = 193.160.209.85:${toString constants.wireguard.tunnelPort}
+  Endpoint = ${constants.proxyAddress}:${toString constants.tunnelPort}
     " | str trim | print
   }
 ''
