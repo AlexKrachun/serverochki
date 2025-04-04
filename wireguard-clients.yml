@@ -1,8 +1,10 @@
 liferooter-laptop: ENC[AES256_GCM,data:1veF6ez3rI6j2zEsAph/ybbxV6ztj9AqsQVh/OLNgP6iWSKeeyHMEwr0Xls=,iv:4DeIUJXdFMCVBjQBQlrOIHY1AVu61Q4DpCOayuUAPN4=,tag:7XiU89xTMVyqj7dOXL7sMg==,type:str]
 liferooter-phone: ENC[AES256_GCM,data:IzYoCUu5xBRjl03sppW167EOntppMca1vnLEZP6EKGn4Kft7zN/z7q4xCPs=,iv:/ltH7lOQpzOMn3D7Sbc/Uy/i3XSCWuTf78B1zr8+FIg=,tag:3CRSduZ89Gd8gtTQ4i0eDQ==,type:str]
-liza-laptop: ENC[AES256_GCM,data:rMz6gPadpVhACZkAu344kSr2/JzZ4zYae8N1IM01utytJuHCZH4i1mXB/ek=,iv:q/TcFI+Rm50aww6JgOylLw44D0w9ynisg3MUnL2R6N4=,tag:9iXUXBby5rclTp4mfvBfWQ==,type:str]
-liza-phone: ENC[AES256_GCM,data:DQteiyNMmsGs8p3QL2DU0ybSHCca1Ja18bki3a12tmckjtogdRjl5OUoOjQ=,iv:ugPVUhHOXQW6igTCEatFNfzDz79MJFytR4oq7EbYWfo=,tag:c/vEhgJ/EgyVwi65z+egeA==,type:str]
-liza-tablet: ENC[AES256_GCM,data:RLupiazlmd8WR6/TIoYBOnVjv1oMZjRZd3Lf9jzTUa1OM1dKD1B6RNZ1rUg=,iv:5b0UScfT6c2Q0Que1YrF+lruy3+K6wJK3AT5jqOgWPs=,tag:giWaw1rEsMDreg8Y3k71rg==,type:str]
+liza-laptop: ENC[AES256_GCM,data:bmrmDyPp92DpSdA0mkO+OP9cIXvfowplQ7wzdDM/CzUvvGun+5F3AYw7Zi4=,iv:U+5m1Jfkz7W6t6xHCxsEGZDuj4f2IMylgbKf95FzbHM=,tag:1d8ztcE1uI5vp2irQhemBQ==,type:str]
+liza-phone: ENC[AES256_GCM,data:5tPhWfMQ8RCt97CuhvNMplLjFo3pDJTlo2+/Vx8Hh/11t3ZLqJbL4tiROeM=,iv:HA1Re70FpH2mLQabFS5sBEYTN43g2bdiFOG/iyXVLdE=,tag:0lW8f+ewxSNa6ysSq7U0PQ==,type:str]
+liza-tablet: ENC[AES256_GCM,data:o3ZwIErdOXSqx7378cn/ww3hkWdqcwmglxTQPWsddAJKXTP9riquNrr0Yp4=,iv:Chyb9YmuxbymwukA4Go05ql/7AvIbFJlVlDuLJkC9TQ=,tag:eYmQYViRYP4A3MEvgnUjHw==,type:str]
+patay-laptop: ENC[AES256_GCM,data:TVVRgS58NV2WaN5lcmAmM2hYZCxUdUOzPMlpsncyZJRr2kXwqlDgqgrd2cE=,iv:X3FOL7eOQTDLkmEoVWb5zYP7bsiGu2Cths+oneZUkOI=,tag:Fa1WsRoJGfNzkg/GBCVdfQ==,type:str]
+patay-phone: ENC[AES256_GCM,data:+BDBB56s3xbnFUpxVt+eTjO97xJ2DC2X0uUGFJRfFAne3fFH5EI6ZARLsZ4=,iv:2SWCEk9d7O7OPoGk5Rg9dv67Gh0RBkfr77FoAQl3zRQ=,tag:MDBpbDA6sUBTboAWm2Nxdw==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -36,8 +38,8 @@ sops:
             VlB0NXhMMFhsMWVnK3F2SWhBbFp4YzgK0xT7ME3jnUrKGmX/ee/zs9SFVJsrCchy
             L3ZTGGAjmbnxD6AzxsBcq1IYK/1AuiJNKgAX487ZJjRERwC03zyT4Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-03T21:06:28Z"
-    mac: ENC[AES256_GCM,data:AxLGsA4CtIstLa1HrQ6Dh6Q4ZScCQ5KieQZQb/yzoiWbE+HIix8xLzUhbgyhGE4WG21grQgVV9IkU8/w7nPU0Z95AynjfAYQ24XpBW+U3JVulszKnf4g/IDMQOeCyzg0qPfi0iY9a3IUCys3xGpwKaxUdciO929TwDDQS32pMPg=,iv:nx+WPuEaF9qLxJXlPA1h5+ocR/ouZWO3EYTysDlYuU0=,tag:6M9BoHb7HcW7hQONMtjPZw==,type:str]
+    lastmodified: "2025-04-04T09:22:07Z"
+    mac: ENC[AES256_GCM,data:MF3LIuPcWAXBjrjb6FNzSVtEK8iBkCBs0DURpr4cFrBiYX6wjoBOfWNXocfgYDtsNBVbN/JKNRhCHU4nz0NVAym2a7EpKosmxeCxXa729MQ84HVFbi12pBd0YBPxfUHlChz/bktOSV8IukxuCeCgLW3YP6zUj+cEslaQ5uSQbCg=,iv:eb03biQDM8n2K8t/n+rgWkzOB8thrbMk4GVr51TMZdU=,tag:5/gRzJJRuKe1kZJwx8y+UQ==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.9.4
