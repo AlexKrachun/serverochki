@@ -57,7 +57,6 @@ in
       autostart = true;
       listenPort = wgPort;
 
-      # Public key: fnjS5SvMGwGQ0o3N+JpNndtZotzGmbrpR44fxsc1FEE=
       privateKeyFile = config.sops.secrets.wireguardKey.path;
 
       postUp = ''
