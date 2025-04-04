@@ -12,7 +12,7 @@
       serverAddress = lib.mkOption {
         description = "VPN server address";
         type = lib.types.str;
-        default = "147.45.240.98";
+        default = "80.64.17.37";
         readOnly = true;
       };
 
