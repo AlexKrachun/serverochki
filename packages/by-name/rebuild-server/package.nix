@@ -15,7 +15,6 @@ writeShellApplication {
   ];
   text = ''
     nixos-rebuild switch \
-      --fast \
       --flake . \
       --use-remote-sudo \
       --use-substitutes \
