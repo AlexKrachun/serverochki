@@ -1,0 +1,33 @@
+name: deploy
+
+on: push
+jobs:
+  deploy:
+    name: Deploy
+    steps:
+      - name: Install Nix
+        uses: nixbuild/nix-quick-install-action@v30
+
+      - name: Restore Nix cache
+        uses: nix-community/cache-nix-action/restore@v6
+        with:
+          primary-key: nix-cache
+          nix: true
+
+      - name: Configure SSH keys
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_ed25519
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Deploy configuration to servers
+        run: nix run .#rebuild-server
+
+      - name: Save Nix cache
+        uses: nix-community/cache-nix-action/save@v6
+        with:
+          primary-key: nix-cache
+          nix: true
+          gc-max-store-size: 2G
+

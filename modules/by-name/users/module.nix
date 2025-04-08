@@ -22,5 +22,13 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPqqape1/IJC8PK+7lJxwM9N9Oo4SK7HZ7SnCMZjmaTR liferooter@computer"
       ];
     };
+
+    github-actions = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJoXuFi3XrDV5K8ShdRafIE0VYVN3Pi6WhtyBuUCw8nI actions@github.com"
+      ];
+    };
   };
 }

@@ -5,7 +5,9 @@
   self,
 }:
 let
-  sequoiaAddr = self.nixosConfigurations.sequoia.config.constants.serverAddress;
+  inherit (self.nixosConfigurations.sequoia.config) constants;
+  sequoiaAddr = constants.serverAddress;
+  pineAddr = constants.proxyAddress;
 in
 writeShellApplication {
   name = "rebuild-server";
@@ -15,12 +17,17 @@ writeShellApplication {
   ];
   text = ''
     nixos-rebuild switch \
-      --flake . \
+      --flake ${self} \
       --use-remote-sudo \
       --use-substitutes \
-      --target-host ${sequoiaAddr} \
-      --build-host ${sequoiaAddr} \
-      --log-format internal-json \
-      |& nom --json
+      --target-host github-actions@${sequoiaAddr} \
+      --log-format bar-with-logs
+
+    nixos-rebuild switch \
+      --flake ${self} \
+      --use-remote-sudo \
+      --use-substitutes \
+      --target-host github-actions@${pineAddr} \
+      --log-format bar-with-logs
   '';
 }

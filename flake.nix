@@ -47,7 +47,6 @@
           packages = lib.attrValues {
             inherit (self.packages.${system})
               client-config
-              rebuild-server
               ;
             inherit (pkgs)
               nixd
