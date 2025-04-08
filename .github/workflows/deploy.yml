@@ -4,6 +4,8 @@ on: push
 jobs:
   deploy:
     name: Deploy
+    runs-on: ubuntu-latest
+
     steps:
       - name: Install Nix
         uses: nixbuild/nix-quick-install-action@v30
