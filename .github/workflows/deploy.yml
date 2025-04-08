@@ -23,6 +23,9 @@ jobs:
           name: id_ed25519
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
       - name: Deploy configuration to servers
         run: nix run .#rebuild-server
 
