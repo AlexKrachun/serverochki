@@ -8,6 +8,7 @@ patay-phone: ENC[AES256_GCM,data:+BDBB56s3xbnFUpxVt+eTjO97xJ2DC2X0uUGFJRfFAne3fF
 alexkarachun-mydear1: ENC[AES256_GCM,data:fiRxQMIgHLi+uCbXN7+nH4R7yHb2SU6lr2dW7yu3vhH35vW/8tC/0XB+g1Q=,iv:XlwRQWjGYQNOaG17VRH0J/2jVLk2g7OGH+/dTQlXp7Q=,tag:uuqzKPhxhd6+zDyL2IewuA==,type:str]
 weethet: ENC[AES256_GCM,data:60G2unWsw5SMz3o5nrJ5eXBmtlQ9b9zafVmMZzE1swLvJuMIrDvMOczbTXE=,iv:R2ev3/WbT7lBfOQRWTn7XsWUf5s6uAYtmqHrbEh5V24=,tag:oNjE1eOUWJ3kjRR6FExpvA==,type:str]
 ann-7d: ENC[AES256_GCM,data:vOF6vEbvvVOaGPmleZRERHSA6RhyDhnni1opDdkCseERKJZhMtEJ3gsD5V0=,iv:SiU4jPyEeXEkhv5V5FwaiOI10K2k7lgVSN/DeVP5AKk=,tag:zmowy9G1GLQPYHpWTi+fBA==,type:str]
+tanusha-laptop: ENC[AES256_GCM,data:OaodtBYXd3OhrmTatN1QKKHs2RIHjw5mrooLMAUww4yAuzyLqelusBhHwVc=,iv:VadMR6arp20uQzqzs8W1d5qy+VZmIGtpcLmVJuyYI+A=,tag:YGItWk9gdoe1vLfDmo+RGw==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -41,8 +42,8 @@ sops:
             VlB0NXhMMFhsMWVnK3F2SWhBbFp4YzgK0xT7ME3jnUrKGmX/ee/zs9SFVJsrCchy
             L3ZTGGAjmbnxD6AzxsBcq1IYK/1AuiJNKgAX487ZJjRERwC03zyT4Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-08T15:28:36Z"
-    mac: ENC[AES256_GCM,data:zErOAk8OnDCRkJmL666XfDoY0R3u46VIE0dzI66moO3Gn/xFTpxtSjv7EVx/2Iix7yBlDrbKNfsFip1mqpUKp4uwnUOzffORsyNY/2BhKtw/djlUs2eOuH5vagOvvkUiy0C8cFbu16TzKJmwjohjyFs2LSnQkuPYd6Qh4NqPRDA=,iv:sLXmXR042VMHieFHN13+NyqKMHUfJpMle/xxlitQC0Q=,tag:Pu+hnwyDBk5m0RY1237NXQ==,type:str]
+    lastmodified: "2025-04-18T01:10:53Z"
+    mac: ENC[AES256_GCM,data:EWjJwV4W2tsnhqW0U/VBn914NFi5U8EALv5krJ/orwbAXIiMl43H2pAy9Row0DzPUGIDPI2ofwj+QPAbhneFjwPBr6myk6va8RyMhH4xHXW53UOX11Xf6UyTgkO+5WuB7zcwU5Td/1xP0wRM+2LJJK4By6uG8+F7A//92L5Te8k=,iv:RQN8YOVaaG+qD7qZa9s9zkR/RBnol5vgz4vVr19LJi0=,tag:ab2vC+DL1dg2APVlNCCY/A==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.9.4
