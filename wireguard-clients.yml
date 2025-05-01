@@ -17,6 +17,7 @@ daryapvlv-laptop: ENC[AES256_GCM,data:B50rN/oQXok7eQligGo169XSe6SlveC7ot5ggJW5Rj
 daryapvlv-tablet: ENC[AES256_GCM,data:W12RvB7jpfZxGaH3b2w4RsZxBWiT51TnsW6cJsr7rNDdSU85QHRXoi2y6UA=,iv:wQ8RJWtyK53vA39y/unvQf3ci7R/x/taD+6KvhTKxcg=,tag:Tc7P/Rjrbc/GTmYizmqj9w==,type:str]
 annc-phone: ENC[AES256_GCM,data:/9iyr4fx7SVocB2lqfLcwVJAHRPyKPervFURCZ8RCbowPb3fVo6GhIDNqKo=,iv:RC4H0pA/6KTumcswuLrLUkllQ87pACsA6V6o22AmkRg=,tag:OIMiQaknMWPJcRyFK5D7QA==,type:str]
 annc-laptop: ENC[AES256_GCM,data:9XikKV27jsdxm9RHo3sPEcPRGd88H7ASXVW9YQBO/TXTERvxVRyowRvqozs=,iv:L6jpushU3F9KZDbTr380wEWfh3++9L3FJJ0kci9TIKE=,tag:kpxGA/FPKMCyaJ4a3aNy1g==,type:str]
+daryapvlv-granny: ENC[AES256_GCM,data:oMOHyM9YEGoJErvqHnJZyyLPBDKw67loerpnuxOO2fbFpStNp10veVIvYXg=,iv:4zKRcw2EyJEzBQchl4It8pzidC4O7XygJwXtXiOAaZ8=,tag:30tA6kPsxnq35GayItUr3g==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -50,8 +51,8 @@ sops:
             VlB0NXhMMFhsMWVnK3F2SWhBbFp4YzgK0xT7ME3jnUrKGmX/ee/zs9SFVJsrCchy
             L3ZTGGAjmbnxD6AzxsBcq1IYK/1AuiJNKgAX487ZJjRERwC03zyT4Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-05-01T09:53:56Z"
-    mac: ENC[AES256_GCM,data:B06bBlUPFnF17VInd8VE0RsmD9xdx6HDYo5OXwfB9asFbFsDIl8t8I9tFfWLbjdquralzYRpnSJgjd9ocVeF8g6v4xlnHagjOWaixJpJXyDaGSnEl9HxAPFBMxt00K2VHRGJUBmY6x9DgwG901BaJy93dpwSYGhSvBW2rp2Lv6Q=,iv:eZIHJIRZSaR/vJCNPtzrr9vhupEg9rJzKwEppTdLlsM=,tag:Ce+bT8rk2k2fLuj3VjyoeQ==,type:str]
+    lastmodified: "2025-05-01T11:13:37Z"
+    mac: ENC[AES256_GCM,data:L04laY731fPfXS1vWoMVph78dW+l69F7cppLwRLS8FmE5tfy9NPUPjlb+kCMv2gkVjW0MZ3Ce9TlJiE2IpiDQf5x1ShWF/bbU8FWJ5t7FkhxfVy+FAn/3TqQSu1/kyHkd5u8Wus2uUiZ70tzilci5djsJDJHAJCh6ffc3XI/xSA=,iv:80vavj7FgbRidoLLfWzyh2SIgKFJH/2r+lYDyIbCxH8=,tag:HtHruspBd3SNaxTEKqg58g==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.9.4
