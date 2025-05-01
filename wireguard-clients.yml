@@ -12,6 +12,11 @@ tanusha-laptop: ENC[AES256_GCM,data:OaodtBYXd3OhrmTatN1QKKHs2RIHjw5mrooLMAUww4yA
 sg-phone: ENC[AES256_GCM,data:UVpRECJW4zxVN/dDiUh3vwVhHIjLpsnZiPiUljZ69NemPOjTcGcPjoBjvAo=,iv:3T1RlvT+/1/secwmGrT5dkdphhNquGcdy+kSlkkpvFk=,tag:vdPhe1uc91IioC7GsQieBw==,type:str]
 sg-laptop: ENC[AES256_GCM,data:oz5JKWFE57LcktPbS8xKMoOpqBu4QjWlUIGAI/GJsTKUKLxdkXGMuVHee3A=,iv:STH4iddM7R+TIcoO7CAGck0/f4CLCEZ84M1thiNQa50=,tag:6FsRyalEQ5fmHVdFRpS2fA==,type:str]
 anya-british-laptop: ENC[AES256_GCM,data:Yn2gLuu3bk1wfm3qf0OU1Dx01So/pTHUG5BPbO+6kbSltdJgQ2YKG42vAgw=,iv:aPcbhkUgNRFKpfxtdm/lQ4nhC/rDECM3Fzdg0+h3tJw=,tag:obk2ghhEz708U4vkbXpCMQ==,type:str]
+daryapvlv-phone: ENC[AES256_GCM,data:f0vempg7dRt4xwWP83NcfvwBE/wry/fCIvT0leWIQ4GHdAnpom33Ge8TRho=,iv:uCc9KLdVicGtSE0cSHeIEfRNHFMQvOy1Z1gKl+9bpAw=,tag:cnufw+W9aKKHvGdKPTigKQ==,type:str]
+daryapvlv-laptop: ENC[AES256_GCM,data:B50rN/oQXok7eQligGo169XSe6SlveC7ot5ggJW5RjjXHDZbMtCVdFQh9BQ=,iv:h+lnKRdeAkqhKghOjk9BFVYbB4GREk+lTvVx6vO9iqc=,tag:+r4kf7fToGwy/UMS2AVapw==,type:str]
+daryapvlv-tablet: ENC[AES256_GCM,data:W12RvB7jpfZxGaH3b2w4RsZxBWiT51TnsW6cJsr7rNDdSU85QHRXoi2y6UA=,iv:wQ8RJWtyK53vA39y/unvQf3ci7R/x/taD+6KvhTKxcg=,tag:Tc7P/Rjrbc/GTmYizmqj9w==,type:str]
+annc-phone: ENC[AES256_GCM,data:/9iyr4fx7SVocB2lqfLcwVJAHRPyKPervFURCZ8RCbowPb3fVo6GhIDNqKo=,iv:RC4H0pA/6KTumcswuLrLUkllQ87pACsA6V6o22AmkRg=,tag:OIMiQaknMWPJcRyFK5D7QA==,type:str]
+annc-laptop: ENC[AES256_GCM,data:9XikKV27jsdxm9RHo3sPEcPRGd88H7ASXVW9YQBO/TXTERvxVRyowRvqozs=,iv:L6jpushU3F9KZDbTr380wEWfh3++9L3FJJ0kci9TIKE=,tag:kpxGA/FPKMCyaJ4a3aNy1g==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -45,8 +50,8 @@ sops:
             VlB0NXhMMFhsMWVnK3F2SWhBbFp4YzgK0xT7ME3jnUrKGmX/ee/zs9SFVJsrCchy
             L3ZTGGAjmbnxD6AzxsBcq1IYK/1AuiJNKgAX487ZJjRERwC03zyT4Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-27T21:05:47Z"
-    mac: ENC[AES256_GCM,data:+knb7ufWTx3DwFtesVmg8PCNjMrdSX0m0sFssDl2FO+PXK40ilLE730yrkmVhGlx4Bmjppknobnr/xZN/DIQanCbZkgVhOW5s9tsNB36gf+iYPCg25qlj7giSwfvIDcMffJvjNK3aHUtP+zHYbMDrRI7333Z/65JmsAUSTwufe0=,iv:ITrvUJpbmoihuCywNoIJyPryyAGKrhVCqtJoASdiIlE=,tag:c44kWb/sJcFjUFp5x+Qahg==,type:str]
+    lastmodified: "2025-05-01T09:53:56Z"
+    mac: ENC[AES256_GCM,data:B06bBlUPFnF17VInd8VE0RsmD9xdx6HDYo5OXwfB9asFbFsDIl8t8I9tFfWLbjdquralzYRpnSJgjd9ocVeF8g6v4xlnHagjOWaixJpJXyDaGSnEl9HxAPFBMxt00K2VHRGJUBmY6x9DgwG901BaJy93dpwSYGhSvBW2rp2Lv6Q=,iv:eZIHJIRZSaR/vJCNPtzrr9vhupEg9rJzKwEppTdLlsM=,tag:Ce+bT8rk2k2fLuj3VjyoeQ==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.9.4
