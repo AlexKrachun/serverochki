@@ -1,25 +1,28 @@
 { lib, ... }:
+let
+  readTrimmed = file: lib.trim (builtins.readFile file);
+in
 {
   options = {
     constants = {
       proxyAddress = lib.mkOption {
         description = "Proxy server address";
         type = lib.types.str;
-        default = "193.160.209.85";
+        default = readTrimmed ./proxy.txt;
         readOnly = true;
       };
 
       serverAddress = lib.mkOption {
         description = "VPN server address";
         type = lib.types.str;
-        default = "80.64.17.37";
+        default = readTrimmed ./endpoint.txt;
         readOnly = true;
       };
 
       tunnelPort = lib.mkOption {
         description = "Port used for tunnel";
         type = lib.types.port;
-        default = 25565;
+        default = builtins.fromJSON (readTrimmed ./tunnel-port.txt);
         readOnly = true;
       };
 
@@ -33,7 +36,7 @@
       subnetPrefix = lib.mkOption {
         description = "Prefix of Wireguard subnet";
         type = lib.types.str;
-        default = "10.200.200";
+        default = readTrimmed ./subnet.txt;
         readOnly = true;
       };
     };

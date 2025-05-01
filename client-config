@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ $# != 1 ]]; then
+  echo "The script accepts only one argument: peer name" >&2
+  exit 1
+fi
+
+repo_root="$(git rev-parse --show-toplevel)"
+secret_file="${repo_root}/wireguard-clients.yml"
+peer_name="$1"
+peer_key="$(sops decrypt "${secret_file}" --extract "['${peer_name}']")"
+peer_index="$(sops decrypt "${secret_file}" \
+  | grep -n "${peer_name}" \
+  | cut -d':' -f1)"
+server_pubkey="$(sops decrypt "${repo_root}/hosts/sequoia/wireguard-server.yml" --extract "['wireguardKey']" \
+  | wg pubkey)"
+constants_dir="${repo_root}/modules/by-name/constants"
+subnet_prefix="$(cat "${constants_dir}/subnet.txt")"
+proxy_address="$(cat "${constants_dir}/proxy.txt")"
+tunnel_port="$(cat "${constants_dir}/tunnel-port.txt")"
+
+cat <<EOF
+[Interface]
+PrivateKey = ${peer_key}
+Address = ${subnet_prefix}.$(($peer_index + 1))/32
+DNS = 1.1.1.1
+MTU = 1353
+
+[Peer]
+PublicKey = ${server_pubkey}
+AllowedIPs = 0.0.0.0/0
+Endpoint = ${proxy_address}:${tunnel_port}
+EOF

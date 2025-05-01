@@ -42,12 +42,9 @@
         { pkgs, ... }: import ./packages/top-level/all-packages.nix { inherit pkgs inputs self; }
       );
       devShell = eachSystem (
-        { pkgs, system }:
+        { pkgs, ... }:
         pkgs.mkShellNoCC {
           packages = lib.attrValues {
-            inherit (self.packages.${system})
-              client-config
-              ;
             inherit (pkgs)
               nixd
               sops
