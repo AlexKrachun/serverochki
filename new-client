@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+bail () {
+  echo -e "\e[31m$@\e[0m" >&2
+  exit 1
+}
+
+if [[ $# != 1 ]]; then
+  bail "The script accepts only one argument: peer name"
+fi
+
+repo_root="$(git rev-parse --show-toplevel)"
+secret_file="${repo_root}/wireguard-clients.yml"
+peer_name="$1"
+peer_key="$(wg genkey)"
+
+(sops decrypt "${secret_file}" --extract "[\"${peer_name}\"]" >/dev/null 2>/dev/null) \
+  && bail "Peer '${peer_name}' already exists!" \
+  || true
+
+sops decrypt -i "${secret_file}"
+
+cat >> "${secret_file}" <<EOF
+${peer_name}: ${peer_key}
+EOF
+
+sops encrypt -i "${secret_file}"
+echo -e "\e[32mNew peer is added successfully!\e[0m" >&2
+./client-config "${peer_name}"
