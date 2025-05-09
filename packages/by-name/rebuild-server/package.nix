@@ -46,6 +46,7 @@ writeShellApplication {
       --log-format bar-with-logs
 
     if [ "$flake_lock_changed" = true ]; then
+      echo "Rebooting pine..."
       ssh github-actions@${pineAddr} sudo systemctl reboot
     fi
   '';
