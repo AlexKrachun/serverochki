@@ -3,6 +3,7 @@ keys:
   - &server_sequoia age1ryrkhrdczkvcgs2tuvvlfy4qgsdelwjhthnm88hquv5hntplmplqfuxdm4
   - &admin_alex age1gkagt89wv3z4k3rxp5s0wqwaaml9mlvwfrzfzvh8fnjnwymarpzq5ccs67
   - &admin_liferooter age1w8gl68d3eanxk7s9fzahs7vlyxaj244uk8jcruw74l89c2dy7v5svj4tlp
+  - &admin_khromotov age1t5l8qh0wuypede88y8u6lwqpux8cw3l7jkqn4ynahhgzs76eus4sr5r4e8
 creation_rules:
   - path_regex: modules/by-name/secrets/common.yml
     key_groups:
@@ -22,4 +23,5 @@ creation_rules:
       - age:
           - *admin_alex
           - *admin_liferooter
+          - *admin_khromotov
           - *server_sequoia
