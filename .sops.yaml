@@ -17,6 +17,7 @@ creation_rules:
       - age:
           - *admin_alex
           - *admin_liferooter
+          - *admin_khromotov
           - *server_sequoia
   - path_regex: wireguard-clients.yml
     key_groups:
