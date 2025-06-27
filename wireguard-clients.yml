@@ -1,4 +1,4 @@
-liferooter-laptop: ENC[AES256_GCM,data:tJQXkycYcQofZ/yfvlC7GWWlb37l2BVUm1aM8lt+zU8b8/d6jOk5CjK162s=,iv:IXaaKQRawDyEa9p2t+pSOq7MTAtw0v+QksjYG75WuZg=,tag:jSTI8U5D3eOUAS+5ywsA2w==,type:str]
+liferooter-laptop: ENC[AES256_GCM,data:QDJOLeJHXaBVR6dA5+pCDdo2dt+pa3ZjgvniuLP9IDsFhTWZ+ZfZXqyyHOA=,iv:LxlZWn8HHsOJmXk9qRXJS0/hHdCKFQmU9b096PAZyVw=,tag:AnhffPAQytitYT31gAg0kw==,type:str]
 liferooter-phone: ENC[AES256_GCM,data:kMpcQtqLvLradd9GCsLffnZd4GKq2J97n7VMIszg/EiluoEV0zUFhYGLMds=,iv:drUjvarWtoIm0reOpVdGPl9xY29kR4Lp7VoCgk3Yp2g=,tag:UzBffQVBXtqn5QDf9cvquQ==,type:str]
 liza-laptop: ENC[AES256_GCM,data:9wM6fOxXcj4Z0eMAsYsGDePW1EBOjtUDa89J7M3XyByp1LMZZPPIZ0NcJzU=,iv:5C5OWfVvYi7E5JFG3lLcYh/UFu10MFD+yDSatsFEUnE=,tag:xLCYMhnzMchFZ+5RC4nzYw==,type:str]
 liza-phone: ENC[AES256_GCM,data:dnpsDvTcrp25hvGxhRhvvlLrrxW7gtCyb7hVJ2f3GhR7QkirSJbEho9qSBQ=,iv:hIwtvpbx4D7UAWF7uc9dE5M9ZnlEbbhWnJQ9YOkkyfY=,tag:VN+oqQSJ4nc/u1PJTJXk4g==,type:str]
@@ -68,7 +68,7 @@ sops:
             Y0prV3k0ZVMzQzhySHBPMk1zNXR4eDAKXBkPIVL8LA/kQXn7rV+TgroI99pXxx7k
             ihTlXb5sjxIwsOBLBIcYHD8y094deL/pl/QN1n7yEXe1FqB5xGiHxA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-06-17T15:57:06Z"
-    mac: ENC[AES256_GCM,data:iVef3IX1FRXPddQCpB6sX7pZ8qyceZ8dtrX6vN1anjtDABRRmCh1lnV3O2dx+35PDoPkPyd5bzOIcsoRKiRZXIwLBms2GOBuKaLyo1ujXHcyON/Ho1S7xdjuVpCn/pQbqHfsAr9Jwm491KSZVdP40wfYHJOYZaoPzS/6+GOhC4Y=,iv:da6/DfheICAAKpEZakUsKWRNaUUrbwq3vDEHvBLd6Sc=,tag:vB+C3CjfqiOvCi6BPnRf+A==,type:str]
+    lastmodified: "2025-06-27T13:09:44Z"
+    mac: ENC[AES256_GCM,data:gKCJ5IYBlxalAuEhVSVXtA+oWHEiuTs1yGFiL9R/3HXTcgp4yeITLh1lgRw/VoeMhRXYBCWIE9HPgnPMSIFQGcqYbwgWnxR+E4D+DYcW0rk81MTYhM0y0yj+lA+4iUl3V1Q6GGSYkU+NkyUO2hlV4F2Lh3IWkV0lTdJ2Mmbf8Ck=,iv:WWiIla6PY14M1heyOuJskZdHlc2H3FwIrMjb3lKmphA=,tag:4RGVsdesIYtzJVCgcxlXCg==,type:str]
     unencrypted_suffix: _unencrypted
-    version: 3.9.4
+    version: 3.10.2
