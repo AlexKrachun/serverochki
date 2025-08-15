@@ -36,7 +36,7 @@ let
       let config_path = "/run/wireguard.conf"
       touch $config_path
       chmod 600 $config_path
-      chown root:wireguard-exporter $config_path
+      chown wireguard-exporter:wireguard-exporter $config_path
       $config | save -f $config_path
 
       $peers
