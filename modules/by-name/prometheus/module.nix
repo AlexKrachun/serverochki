@@ -17,7 +17,7 @@ in
     sops.secrets.${secretName} = {
       owner = "root";
       mode = "0400";
-      restartUnits = [ "wireguard-${wgInterface}" ];
+      restartUnits = [ "wireguard-${wgInterface}.service" ];
     };
 
     services.prometheus.exporters.node = {
