@@ -54,7 +54,10 @@ in
 
     owner = "root";
     mode = "0400";
-    restartUnits = [ "wg-quick-wg0.service" ];
+    restartUnits = [
+      "wg-quick-wg0.service"
+      "prometheus-wireguard-exporter.service"
+    ];
   };
 
   sops.secrets.wireguardPeerKeys = {
@@ -64,7 +67,10 @@ in
 
     owner = "root";
     mode = "0400";
-    restartUnits = [ "wg-quick-wg0.service" ];
+    restartUnits = [
+      "wg-quick-wg0.service"
+      "prometheus-wireguard-exporter.service"
+    ];
   };
 
   networking.wg-quick.interfaces = {
