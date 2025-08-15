@@ -24,15 +24,19 @@ let
         | insert pubkey {|peer| $peer.key | ${wg} pubkey}
         | insert allowed_ips {|peer| $"${subnetPrefix}.($peer.index + 2)/32"}
 
+      let server_key = open --raw ${config.sops.secrets.wireguardKey.path}
+
       let config = $peers
         | each {|peer|
           $"[Peer]\n# friendly_name = ($peer.name)\nPublicKey = ($peer.pubkey)\nAllowedIPs = ($peer.allowed_ips)\n"
         }
+        | $"[Interface]\nListenPort = ${toString wgPort}\nPrivateKey = ($server_key)\n\n" + $in
         | str join "\n"
 
       let config_path = "/run/wireguard.conf"
       touch $config_path
       chmod 600 $config_path
+      chown root:wireguard-exporter $config_path
       $config | save -f $config_path
 
       $peers
