@@ -3,6 +3,7 @@
   imports = [
     ./shadowsocks.nix
     ./wireguard.nix
+    ./prometheus.nix
   ];
 
   vpn.address = "10.200.127.7";
