@@ -4,6 +4,7 @@
     enable = true;
     interfaces = [ "wg0" ];
     listenAddress = config.vpn.address;
+    latestHandshakeDelay = true;
     openFirewall = true;
   };
 }
