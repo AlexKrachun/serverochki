@@ -16,14 +16,28 @@ let
     #! ${getExe pkgs.nushell}
 
     def main [] {
-      open ${config.sops.secrets.wireguardPeerKeys.path}
-      | from yaml
-      | values
-      | enumerate
-      | each {|el|
-        let key = $el.item | ${wg} pubkey
-        let i = $el.index + 2
-        ${wg} set wg0 peer $key allowed-ips $"${subnetPrefix}.($i)/32"
+      let peers = open ${config.sops.secrets.wireguardPeerKeys.path}
+        | from yaml
+        | transpose name key
+        | enumerate
+        | flatten
+        | insert pubkey {|peer| $peer.key | ${wg} pubkey}
+        | insert allowed_ips {|peer| $"${subnetPrefix}.($peer.index + 2)/32"}
+
+      let config = $peers
+        | each {|peer|
+          $"[Peer]\n# friendly_name = ($peer.name)\nPublicKey = ($peer.pubkey)\nAllowedIPs = ($peer.allowed_ips)\n"
+        }
+        | str join "\n"
+
+      let config_path = "/run/wireguard.conf"
+      touch $config_path
+      chmod 600 $config_path
+      $config | save -f $config_path
+
+      $peers
+      | each {|peer|
+        ${wg} set wg0 peer $peer.pubkey allowed-ips $peer.allowed_ips
       }
     }
   '';

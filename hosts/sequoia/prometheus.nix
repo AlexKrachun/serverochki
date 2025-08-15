@@ -6,5 +6,6 @@
     listenAddress = config.vpn.address;
     latestHandshakeDelay = true;
     openFirewall = true;
+    wireguardConfig = "/run/wireguard.conf";
   };
 }
