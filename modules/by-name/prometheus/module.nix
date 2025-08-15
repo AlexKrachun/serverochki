@@ -17,7 +17,7 @@ in
     sops.secrets.${secretName} = {
       owner = "root";
       mode = "0400";
-      # restartUnits = [ "wireguard-${wgInterface}.service" ];
+      restartUnits = [ "wireguard-${wgInterface}.service" ];
     };
 
     services.prometheus.exporters.node = {
@@ -26,19 +26,19 @@ in
       openFirewall = true;
     };
 
-    # networking.wg-quick.interfaces.${wgInterface} = {
-    #   address = [ "${config.vpn.address}/24" ];
-    #   autostart = true;
+    networking.wg-quick.interfaces.${wgInterface} = {
+      address = [ "${config.vpn.address}/24" ];
+      autostart = true;
 
-    #   privateKeyFile = config.sops.secrets.${secretName}.path;
+      privateKeyFile = config.sops.secrets.${secretName}.path;
 
-    #   peers = [
-    #     {
-    #       endpoint = "liferooter.dev:51820";
-    #       allowedIPs = [ "10.200.127.0/24" ];
-    #       publicKey = "xjT3bxbeCAobw8zHHInCS2XKunH7erY7XOiJSd3BB2c=";
-    #     }
-    #   ];
-    # };
+      peers = [
+        {
+          endpoint = "liferooter.dev:51820";
+          allowedIPs = [ "10.200.127.0/24" ];
+          publicKey = "xjT3bxbeCAobw8zHHInCS2XKunH7erY7XOiJSd3BB2c=";
+        }
+      ];
+    };
   };
 }
