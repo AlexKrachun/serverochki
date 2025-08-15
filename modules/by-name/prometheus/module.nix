@@ -37,6 +37,7 @@ in
           endpoint = "liferooter.dev:51820";
           allowedIPs = [ "10.200.127.0/24" ];
           publicKey = "xjT3bxbeCAobw8zHHInCS2XKunH7erY7XOiJSd3BB2c=";
+          persistentKeepalive = 25;
         }
       ];
     };
