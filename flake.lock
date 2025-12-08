@@ -2,24 +2,24 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1753373150,
-        "narHash": "sha256-aeHPNoaqFEc+MkMYGzQurnlOoACpCaIA94cXt+z5qng=",
-        "rev": "3ff0e34b1383648053bba8ed03f201d3466f90c9",
+        "lastModified": 1764983851,
+        "narHash": "sha256-pyyfJp6Q80D0YhEuuP/qzasUZjoK3C3PrCp8BPWcDZE=",
+        "rev": "d9bc5c7dceb30d8d6fafa10aeb6aa8a48c218454",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.807027.3ff0e34b1383/nixexprs.tar.xz?rev=3ff0e34b1383648053bba8ed03f201d3466f90c9"
+        "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.1056.d9bc5c7dceb3/nixexprs.tar.xz?lastModified=1764983851&rev=d9bc5c7dceb30d8d6fafa10aeb6aa8a48c218454"
       },
       "original": {
         "type": "tarball",
-        "url": "https://channels.nixos.org/nixos-25.05/nixexprs.tar.xz"
+        "url": "https://channels.nixos.org/nixos-25.11/nixexprs.tar.xz"
       }
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 315532800,
-        "narHash": "sha256-Ba/cFHWBoCISrKBcqU8kH/8LJXYUj2kfFz7l7a7RwMU=",
-        "rev": "6027c30c8e9810896b92429f0092f624f7b1aace",
+        "lastModified": 1764947035,
+        "narHash": "sha256-3PmKrux+ApKEM4IMRNAKeuWicwgRiRcprSuEnsbhVe4=",
+        "rev": "a672be65651c80d3f592a89b3945466584a22069",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre834687.6027c30c8e98/nixexprs.tar.xz?rev=6027c30c8e9810896b92429f0092f624f7b1aace"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre906997.a672be65651c/nixexprs.tar.xz?lastModified=1764947035&rev=a672be65651c80d3f592a89b3945466584a22069"
       },
       "original": {
         "type": "tarball",
@@ -40,11 +40,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752544651,
-        "narHash": "sha256-GllP7cmQu7zLZTs9z0J2gIL42IZHa9CBEXwBY9szT0U=",
+        "lastModified": 1765079830,
+        "narHash": "sha256-i9GMbBLkeZ7MVvy7+aAuErXkBkdRylHofrAjtpUPKt8=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "2c8def626f54708a9c38a5861866660395bb3461",
+        "rev": "aeb517262102f13683d7a191c7e496b34df8d24c",
         "type": "github"
       },
       "original": {
