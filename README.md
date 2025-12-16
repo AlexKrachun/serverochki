@@ -1,0 +1,1 @@
+depricated. актуальный репозиторй https://github.com/spruce-adventure/servers
